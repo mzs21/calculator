@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    @apply bg-black text-white w-full focus:outline-none focus:cursor-text p-4 text-right text-xl rounded-lg;
+  }
+
+  footer {
+    @apply bg-white py-3 flex justify-center space-x-2 hover:space-x-4 fixed left-0 right-0 bottom-0;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .container {
+    @apply h-full grid place-content-center overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500;
+  }
+
+  .calc-conatiner {
+    @apply grid grid-cols-4 grid-rows-6;
+  }
+
+  .button {
+    @apply py-6 px-8 bg-gray-800 text-white font-bold border-white border-2 rounded-lg cursor-pointer;
+  }
+
+  .zero {
+    @apply col-span-2;
+  }
+
+  .equal {
+    @apply row-span-2 bg-blue-500;
+  }
+
+  .display {
+    @apply col-span-4 bg-black cursor-pointer rounded-lg text-right text-xl p-3;
+  }
+
+  .ac,
+  .c {
+    @apply bg-red-500;
+  }
+
+  .operator {
+    @apply bg-gray-500;
+  }
+
+  .answer {
+    @apply text-white;
+  }
+
+  .github {
+    @apply w-8 h-8 hover:scale-150;
+  }
+
+  .linkedIn {
+    @apply w-8 h-8 hover:scale-150;
+  }
 }
